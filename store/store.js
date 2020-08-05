@@ -133,7 +133,8 @@ export const store = new Vuex.Store({
         ],
 
         cart:[],
-        total:0
+        total:0,
+        isNavOpen: false
     },
     mutations:{
         addToCart(state,id){
@@ -151,7 +152,11 @@ export const store = new Vuex.Store({
                 state.total+=product.price;
                 
             }
-           
+
+        },
+
+        toggleNav(state){
+            return state.isNavOpen=!state.isNavOpen;
         }
     }
 })

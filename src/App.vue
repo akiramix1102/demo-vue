@@ -2,11 +2,13 @@
   <div>
     <Header />
     <router-view />
+    <Sidebar/>
   </div>
 </template>
 
 <script>
 import Header from './components/CompHeader'
+import Sidebar from './components/Sidebar'
 export default {
   name: "App",
   data() {
@@ -14,6 +16,7 @@ export default {
   },
   components:{
     Header,
+    Sidebar
   }
 };
 </script>

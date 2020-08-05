@@ -1,32 +1,29 @@
 <template>
   <el-container>
-    <Feature/>
+    <Feature />
   </el-container>
 </template>
 <script>
-
-
-import Feature from './FeatureProducts/index';
+import Feature from "./FeatureProducts/index";
 export default {
   name: "home",
-  
-  components:{
-      Feature,
-  }
- 
+
+  components: {
+    Feature,
+  },
 };
 </script>
 
 <style scoped>
-.el-container{
-    max-width: 1200px;
-    margin: auto;
+.el-container {
+  max-width: 1200px;
+  margin: auto;
 }
 .row {
   width: 100%;
   text-align: center;
 }
-h1{
-    background-color: red;
+h1 {
+  background-color: red;
 }
 </style>

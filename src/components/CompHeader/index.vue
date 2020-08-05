@@ -17,9 +17,11 @@
                 Products</router-link
               ></el-menu-item
             >
-            <el-menu-item index="">
-              <router-link to="/cart" tag="li"><i class="el-icon-s-goods"></i></router-link>
-            </el-menu-item>
+            <li class="el-menu-item" index="3" @click="toggle">
+              <!-- <router-link to="/cart" tag="li"> -->
+                <i class="el-icon-s-goods"></i>
+              <!-- </router-link> -->
+            </li>
           </el-menu></div
       ></el-col>
     </el-row>
@@ -29,6 +31,11 @@
 <script>
 export default {
   name: "header",
+  methods:{
+    toggle(){
+      return this.$store.commit('toggleNav')
+    }
+  }
 };
 </script>
 
@@ -37,5 +44,8 @@ export default {
   max-width: 1200px;
   margin: auto;
   justify-content: center;
+}
+.is-active{
+  border-bottom: none !important;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <el-row class="row" gutter="30">
     <h2>Feature Products</h2>
-    <VueSlickCarousel :dots="true" :arrows="false" v-bind="settings">
+    <VueSlickCarousel :dots="true" :arrows="true" v-bind="settings">
       <el-col :span="6" v-for="product in products" :key="product.id">
         <div class="product">
           <div class="wrapper">
@@ -19,7 +19,6 @@
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   name: "feature",
@@ -38,7 +37,7 @@ export default {
   },
   methods: {
     addToCart(id) {
-      this.$store.commit('addToCart',id)
+      this.$store.commit("addToCart", id);
     },
   },
   computed: {
@@ -52,23 +51,23 @@ export default {
 </script>
 
 <style scoped>
-.wrapper{
-    position: relative;
-    overflow: hidden;
+.wrapper {
+  position: relative;
+  overflow: hidden;
 }
-.product-name{
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-   padding:  10px;
-   background: red;
-   color: #fff;
+.product-name {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 10px;
+  background: red;
+  color: #fff;
 }
 .product-img {
   max-width: 100%;
   transition: all 3s ease;
 }
-.product-img:hover{
-    transform: scale(1.1);
+.product-img:hover {
+  transform: scale(1.1);
 }
 </style>
