@@ -20,6 +20,7 @@
             <li class="el-menu-item" index="3" @click="toggle">
               <!-- <router-link to="/cart" tag="li"> -->
                 <i class="el-icon-s-goods"></i>
+                <span class="number-cart" v-if="cart.length">{{cart.length}}</span>
               <!-- </router-link> -->
             </li>
           </el-menu></div
@@ -31,11 +32,18 @@
 <script>
 export default {
   name: "header",
+ 
   methods:{
     toggle(){
       return this.$store.commit('toggleNav')
     }
+  },
+  computed:{
+    cart(){
+      return this.$store.state.cart;
+    }
   }
+
 };
 </script>
 
@@ -50,5 +58,24 @@ export default {
 }
 .el-menu-item{
   font-size: 24px;
+  position: relative;
 }
+.el-icon-s-goods{
+ 
+  font-size: 24px;
+}
+.number-cart{
+   position: absolute;
+    top: 4px;
+    right: 15px;
+    width: 25px;
+    border-radius: 50%;
+    height: 25px;
+    background-color: red;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
 </style>
