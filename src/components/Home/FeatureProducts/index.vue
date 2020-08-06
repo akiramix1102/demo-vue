@@ -8,8 +8,8 @@
             <img :src="product.img" alt="product.name" class="product-img" />
             <h3 class="product-name">{{ product.name }}</h3>
           </div>
-          <span class="product-price">{{ product.price }} $</span>
-          <button @click="addToCart(product.id)">Add to cart</button>
+          <span class="product-price">${{ product.price }}.00</span>
+          <button class="btn-buy" @click="addToCart(product.id)">Add to cart</button>
         </div>
       </el-col>
     </VueSlickCarousel>
@@ -30,7 +30,7 @@ export default {
         // autoplay:true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         touchThreshold: 5,
       },
     };
@@ -65,9 +65,18 @@ export default {
 }
 .product-img {
   max-width: 100%;
-  transition: all 3s ease;
+  transition: all 1s ease;
 }
 .product-img:hover {
   transform: scale(1.1);
+}
+.product-price{
+  font-size: 24px;
+  font-weight: bold;
+}
+.btn-buy{
+  padding: 10px 15px;
+  margin-left: 20px;
+
 }
 </style>

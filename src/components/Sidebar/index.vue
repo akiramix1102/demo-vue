@@ -1,5 +1,6 @@
 <template>
   <div class="sidebar">
+    
     <div
       class="sidebar-backdrop"
       @click="closeSidebarPanel"
@@ -12,25 +13,27 @@
             Shopping cart
           </li>
           <li v-for="item in cart" :key="item.id" class="item">
-              <div class="item-img">
-                <img :src="item.img" alt="item.name" class="img-fluid">
-              </div>
-              <div class="detail">
-                <span  class="name">
-                  {{item.name}}
-                </span>
-                <p class="price">
-                 <b>${{item.price}}.00</b>  x  {{item.quantity}}
-                </p>
-              </div>
+            <div class="item-img">
+              <img :src="item.img" alt="item.name" class="img-fluid" />
+            </div>
+            <div class="detail">
+              <span class="name">
+                {{ item.name }}
+              </span>
+              <p class="price">
+                <b>${{ item.price }}.00</b> x {{ item.quantity }}
+              </p>
+            </div>
           </li>
         </ul>
         <div class="total">
           <i>Total:</i>
-          <b>${{total}}</b>
+          <b>${{ total }}</b>
         </div>
         <div class="btn-group">
-          <router-link tag="span" to="/cart" @click.native="closeSidebarPanel">View cart</router-link>
+          <router-link tag="span" to="/cart" @click.native="closeSidebarPanel"
+            >View cart</router-link
+          >
           <span>Check out</span>
         </div>
       </div>
@@ -39,7 +42,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 export default {
   name: "side-bar",
   methods: {
@@ -47,56 +50,43 @@ export default {
       return this.$store.commit("toggleNav");
     },
   },
-  computed: mapState(['cart','isNavOpen','total'])
-  // {
-  //   cartItem(){
-  //     return this.$store.state.cart;
-  //   },
-
-  //   total(){
-  //     return this.$
-  //   },
-
-  //   isPanelOpen() {
-  //     return this.$store.state.isNavOpen;
-  //   },
-  // },
+  computed: mapState(["cart", "isNavOpen", "total"]),
 };
 </script>
 
 <style scoped>
-.cart{
+.cart {
   list-style: none;
   padding: 0;
   height: 70%;
   overflow: auto;
 }
-.title{
+.title {
   font-size: 18px;
   font-weight: bold;
 }
-.item{
+.item {
   display: flex;
   justify-content: inherit;
   align-items: center;
   margin: 15px 0;
 }
-.img-fluid{
+.img-fluid {
   max-width: 58px;
   padding-right: 15px;
 }
-.name{
+.name {
   color: #0063d1;
   font-weight: bold;
   font-size: 18px;
 }
-.total b{
+.total b {
   padding-left: 10px;
 }
 .btn-group {
   margin-top: 15px;
 }
-.btn-group span{
+.btn-group span {
   padding: 10px 15px;
   background-color: #0063d1;
   border-radius: 5px;
@@ -105,7 +95,7 @@ export default {
   cursor: pointer;
 }
 
-.btn-group span:last-child{
+.btn-group span:last-child {
   margin-left: 15px;
 }
 
@@ -121,7 +111,7 @@ export default {
 }
 
 .sidebar-backdrop {
- background-color: rgba(0,0,0,.6);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100vw;
   height: 100vh;
   position: fixed;

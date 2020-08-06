@@ -12,7 +12,7 @@ import logo_9 from '../src/assets/imgs/9.jpg'
 import logo_10 from '../src/assets/imgs/10.jpg'
 import logo_11 from '../src/assets/imgs/11.jpg'
 import logo_12 from '../src/assets/imgs/12.jpg'
-import logo_13 from '../src/assets/imgs/13.jpg'
+// import logo_13 from '../src/assets/imgs/13.jpg'
 
 Vue.use(Vuex);
 
@@ -122,14 +122,14 @@ export const store = new Vuex.Store({
                 img: logo_12,
                 category:"dinner"
             },
-            {
-                id:13,
-                name: "Ossobuco ",
-                price: 65,
-                des: 'Phô mai, hải sản, rau xà lách...',
-                img: logo_13,
-                category:"dinner"
-            },
+            // {
+            //     id:13,
+            //     name: "Ossobuco ",
+            //     price: 65,
+            //     des: 'Phô mai, hải sản, rau xà lách...',
+            //     img: logo_13,
+            //     category:"dinner"
+            // },
         ],
 
         cart:[],
@@ -157,6 +157,17 @@ export const store = new Vuex.Store({
 
         toggleNav(state){
             return state.isNavOpen=!state.isNavOpen;
+        }
+    },
+    getters:{
+        filterBf:state=>{
+            return state.products.filter(product=>product.category=="breakfast")
+        },
+        filterLunch:state=>{
+            return state.products.filter(product=>product.category=="lunch")
+        },
+        filterDinner:state=>{
+            return state.products.filter(product=>product.category=="dinner")
         }
     }
 })

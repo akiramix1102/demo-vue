@@ -48,4 +48,7 @@ export default {
 .is-active{
   border-bottom: none !important;
 }
+.el-menu-item{
+  font-size: 24px;
+}
 </style>
