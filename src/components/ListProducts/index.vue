@@ -1,7 +1,9 @@
 <template>
-        <div>
-            list products
-        </div>
+        <el-container>
+            <el-row gutter="30">
+                
+            </el-row>
+        </el-container>
 </template>
 
 <script>

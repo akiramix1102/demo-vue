@@ -143,16 +143,25 @@ export const store = new Vuex.Store({
             let exits=state.cart.find(product=>product.id===id);
             if(!exits){
                 product.quantity=1;
+                product.cost=product.quantity*product.price;
                 let newTotal=state.total+product.price;
                 state.cart.push(product);
                 state.total=newTotal;
             }
             else{
                 product.quantity+=1;
+                product.cost=product.quantity*product.price;
                 state.total+=product.price;
                 
             }
 
+        },
+
+        deleteProduct(state,id){
+            let product = state.cart.find(product=>product.id===id)
+            let result= state.cart.filter(product=>product.id!==id);
+            state.cart=result;
+            state.total-=product.cost;
         },
 
         toggleNav(state){
