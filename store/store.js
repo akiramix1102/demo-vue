@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
         products:[
             {
                 id:1,
-                name: "Antipasto",
+                name: "Mozzarella",
                 price: 23,
                 des: 'Phô mai, hải sản, rau xà lách...',
                 img: logo_1,
@@ -116,7 +116,7 @@ export const store = new Vuex.Store({
             },
             {
                 id:12,
-                name: "mozzarella ",
+                name: "Antipasto ",
                 price: 23,
                 des: 'Phô mai, hải sản, rau xà lách...',
                 img: logo_12,
