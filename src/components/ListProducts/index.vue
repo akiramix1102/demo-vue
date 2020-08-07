@@ -70,11 +70,13 @@ export default {
       // },
     };
   },
+
   methods:{
     addToCart(id){
       return this.$store.commit('addToCart',id)
     }
   },
+
   created() {
     return (this.products = this.$store.state.products);
   },
@@ -89,16 +91,7 @@ export default {
           );
         })
         .sort((a, b) => {
-          // if(this.sortBy==='price'){
-          //   return a.price-b.price
-          // }
-          // else{
-          //    return a.name.toString().localeCompare(b.name.toString());
-          // }
           switch (this.sortBy) {
-            case "name_a_z":
-              return a.name.toString().localeCompare(b.name.toString());
-
             case "name_z_a":
               return b.name.toString().localeCompare(a.name.toString());
 
@@ -107,6 +100,9 @@ export default {
 
             case "price_high_low":
               return b.price - a.price;
+            
+            default:
+              return a.name.toString().localeCompare(b.name.toString());
           }
         });
 

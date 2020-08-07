@@ -134,7 +134,8 @@ export const store = new Vuex.Store({
 
         cart:[],
         total:0,
-        isNavOpen: false
+        isNavOpen: false,
+        numberProduct:null
     },
     mutations:{
         addToCart(state,id){
@@ -143,6 +144,7 @@ export const store = new Vuex.Store({
             let exits=state.cart.find(product=>product.id===id);
             if(!exits){
                 product.quantity=1;
+                state.numberProduct+=product.quantity;
                 product.cost=product.quantity*product.price;
                 let newTotal=state.total+product.price;
                 state.cart.push(product);
@@ -150,6 +152,7 @@ export const store = new Vuex.Store({
             }
             else{
                 product.quantity+=1;
+                state.numberProduct+=1;
                 product.cost=product.quantity*product.price;
                 state.total+=product.price;
                 
@@ -162,6 +165,7 @@ export const store = new Vuex.Store({
             let result= state.cart.filter(product=>product.id!==id);
             state.cart=result;
             state.total-=product.cost;
+            state.numberProduct-=product.quantity;
         },
 
         toggleNav(state){
@@ -177,6 +181,8 @@ export const store = new Vuex.Store({
         },
         filterDinner:state=>{
             return state.products.filter(product=>product.category=="dinner")
-        }
+        },
+
+       
     }
 })

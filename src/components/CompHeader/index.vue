@@ -20,7 +20,7 @@
             <li class="el-menu-item" index="3" @click="toggle">
               <!-- <router-link to="/cart" tag="li"> -->
                 <i class="el-icon-s-goods"></i>
-                <!-- <span class="number-cart" v-if="cart.length">{{cartNumber}}</span> -->
+                <span class="number-cart" v-if="numberCart">{{numberCart}}</span>
               <!-- </router-link> -->
             </li>
           </el-menu></div
@@ -32,22 +32,22 @@
 <script>
 export default {
   name: "header",
+  data(){
+    return{
+      number:null
+    }
+  },
  
   methods:{
     toggle(){
       return this.$store.commit('toggleNav')
     }
   },
-  // computed:{
-  //   cart(){
-  //     return this.$store.state.cart;
-  //   },
-  //   cartNumber(){
-  //     return this.$store.state.cart.reduce((acc,cur)=>{
-  //       return acc+cur.quantity;
-  //     },0)
-  //   }
-  // }
+  computed:{
+    numberCart(){
+      return this.$store.state.numberProduct;
+    }
+  }
 
 };
 </script>
@@ -81,6 +81,7 @@ export default {
     color: #fff;
     justify-content: center;
     align-items: center;
+    font-size: 16px;
 }
 
 </style>
