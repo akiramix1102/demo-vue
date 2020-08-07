@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-row gutter="30">
+    <el-row :gutter="30">
     <el-table :data="cart" 
      style="width: 100%" :default-sort = "{prop: 'price', order: 'descending'}">
       

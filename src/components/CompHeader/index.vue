@@ -4,10 +4,10 @@
       <el-col :span="24"
         ><div class="grid-content bg-purple-dark">
           <el-menu
-            :default-active="activeIndex"
+           
             class="el-menu-demo"
             mode="horizontal"
-            @select="handleSelect"
+         
           >
             <el-menu-item index="1">
               <router-link to="/" tag="li">Home</router-link>
@@ -70,7 +70,7 @@ export default {
   font-size: 24px;
 }
 .number-cart{
-   position: absolute;
+    position: absolute;
     top: 4px;
     right: 15px;
     width: 25px;

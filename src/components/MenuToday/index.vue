@@ -1,7 +1,7 @@
 <template>
-    <el-row class="menu-today row" gutter="30">
+    <el-row class="menu-today row" :gutter="30">
         <h2>Menu Today</h2>
-        <el-col span="24" class="btn-action">
+        <el-col :span="24" class="btn-action">
             <ul class="menu-action">
                 <li @click="getProduct(1)" :class="{highlight:selected==1}">All</li>
                 <li @click="getProduct(2)" :class="{highlight:selected==2}">Breakfast</li>
@@ -9,7 +9,7 @@
                 <li @click="getProduct(4)" :class="{highlight:selected==4}">Dinner</li>
             </ul>
         </el-col>
-        <el-col span="6" v-for="product in products" :key="product.id">
+        <el-col :span="6" v-for="product in products" :key="product.id">
         <div class="product">
             <div class="wrapper">
                 <img :src="product.img" alt="product.name" class="product-img" />

@@ -1,5 +1,5 @@
 <template>
-  <el-row class="row" gutter="30">
+  <el-row class="row" :gutter="30">
     <h2>Feature Products</h2>
     <VueSlickCarousel :dots="true" :arrows="true" v-bind="settings">
       <el-col :span="6" v-for="product in products" :key="product.id">

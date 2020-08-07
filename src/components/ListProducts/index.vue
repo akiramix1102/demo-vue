@@ -1,7 +1,7 @@
 <template>
   <el-container class="wrapp-all">
-    <el-row gutter="30">
-      <el-col span="6">
+    <el-row :gutter="30">
+      <el-col :span="6">
         <h3>Filter</h3>
 
         <div v-for="(category, index) in categorys" :key="index">
@@ -27,9 +27,9 @@
           {{ item }}
         </div> -->
       </el-col>
-      <el-col span="18">
-        <el-row gutter="30" class="list-products">
-          <el-col span="8" v-for="product in filterProduct" :key="product.id">
+      <el-col :span="18">
+        <el-row :gutter="30" class="list-products">
+          <el-col :span="8" v-for="product in filterProduct" :key="product.id">
             <div class="product">
               <div class="wrapper">
                 <img
